@@ -1,0 +1,480 @@
+body{
+    overflow: auto;
+    font-size: 12px;
+    height: 100%;
+    background: no-repeat;
+}
+
+
+label{
+    font-weight: normal;
+}
+
+dl{
+    margin-bottom: 0;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.jb_color{
+    /* IE浏览器 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e4f5eb,endcolorstr=#67bedc,gradientType=1);
+    /* IE浏览器 */
+    /* IE10以上 */
+    background: -ms-linear-gradient(top, #e4f5eb, rgba(103, 190, 220,1));
+    /* IE10以上 */
+    /* firefox */
+    background:-moz-linear-gradient(top, #e4f5eb, rgba(103, 190, 220,1));
+    /* firefox */
+    /*google */
+    background: -webkit-gradient(linear, left top, left bottom, from(#e4f5eb), to(#67bedc));
+    /*google */
+}
+
+
+/*按钮*/
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.btn-grey {
+    width:90px;
+    margin-right:60px;
+    color: #000;
+    background-color: #eeeeee;
+    border-color: #bfbfbf;
+}
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey.focus,
+.btn-grey:active,
+.btn-grey.active,
+.open > .dropdown-toggle.btn-grey {
+    color: #000;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-grey:active,
+.btn-grey.active,
+.open > .dropdown-toggle.btn-grey {
+    background-image: none;
+}
+.btn-grey.disabled,
+.btn-grey[disabled],
+fieldset[disabled] .btn-grey,
+.btn-grey.disabled:hover,
+.btn-grey[disabled]:hover,
+fieldset[disabled] .btn-grey:hover,
+.btn-grey.disabled:focus,
+.btn-grey[disabled]:focus,
+fieldset[disabled] .btn-grey:focus,
+.btn-grey.disabled.focus,
+.btn-grey[disabled].focus,
+fieldset[disabled] .btn-grey.focus,
+.btn-grey.disabled:active,
+.btn-grey[disabled]:active,
+fieldset[disabled] .btn-grey:active,
+.btn-grey.disabled.active,
+.btn-grey[disabled].active,
+fieldset[disabled] .btn-grey.active {
+    background-color: #fff;
+    border-color: #ccc;
+}
+/*按钮*/
+
+/*登录*/
+.header_login{
+    background-color: #003e7e;
+    height: 60px;
+    line-height: 60px;
+}
+
+.title_login{
+    font-size: 2em;
+    color:#003e7e;
+    font-weight: bold;
+    text-align: center;
+    margin: 3% auto 10px;
+}
+
+.box_login{
+    margin: 3% auto ;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.login_content{
+    margin: 5% auto;
+    position: relative;
+}
+
+.login_content .tab{
+    display: inline-block;
+    font-size: 1.2em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #003e7e;
+}
+
+.login_content .first_row, .login_content .pwd{
+    margin-top: -1px;
+    border-top: 1px solid rgba(255,255,255,0.6);
+}
+
+.login_content input{
+    width:100%;
+    border-radius:3px;
+    background: transparent;
+    border: 1px solid #003e7e;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    padding: 0 5px;
+}
+
+.login_content img{
+    float: right;
+    margin-top: 15px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.login_content a{
+    float: right;
+    color: #003e7e;
+    margin-top: 10px;
+}
+
+.btn-blue {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    color: #ffffff;
+    background-color: #003e7e;
+    border-color: #003e7e;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus,
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+    color: #ffffff;
+    background-color: rgba(0, 62, 126, 0.7);
+    border-color: #003e7e;
+}
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+    background-image: none;
+}
+.btn-blue.disabled,
+.btn-blue[disabled],
+fieldset[disabled] .btn-blue,
+.btn-blue.disabled:hover,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue:hover,
+.btn-blue.disabled:focus,
+.btn-blue[disabled]:focus,
+fieldset[disabled] .btn-blue:focus,
+.btn-blue.disabled.focus,
+.btn-blue[disabled].focus,
+fieldset[disabled] .btn-blue.focus,
+.btn-blue.disabled:active,
+.btn-blue[disabled]:active,
+fieldset[disabled] .btn-blue:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue.active {
+    background-color: #383854;
+    border-color: #383854;
+}
+.btn-blue .badge {
+    color: #fff;
+    background-color: #383854;
+}
+
+.footer{
+    width: 100%;
+    background-color: #003e7e;
+    position:fixed;
+    bottom: 0;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.footer .link{
+    margin-bottom: 10px;
+}
+
+.footer a{
+    color: #fff;
+}
+
+.footer a:hover{
+    text-decoration: none;
+}
+
+.footer p.p2, .footer p.p1{
+    float: right;
+}
+
+/*登录*/
+
+.header{
+    height: 60px;
+    line-height: 60px;
+    background-color: #003e7e;
+}
+
+.header img{
+    margin-left: 15px;
+}
+
+
+.header-right{
+    float: right;
+    text-align: right;
+    color: #fff;
+    padding-right: 20px;
+}
+
+.header-right  p{
+    width:15%;
+    display: inline;
+    margin-right: 30px;
+}
+
+.header-right a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.left{
+    height: 1000px;
+    background-color: #fafafa;
+    border-right:1px solid #bfbfbf;
+    width: 14%;
+    padding: 0;
+}
+
+.nav-left{
+    width:100%;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-left  li{
+    width:100%;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-left li.active{
+    font-weight: bold;
+    color: #003e7e;
+}
+
+.nav-left  li  a{
+    font-size: 14px;
+    width:100%;
+    line-height: 44px;
+    color:#000000;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-left li a:hover{
+    text-decoration: none;
+}
+
+/*列表*/
+
+.right{
+    width: 86%;
+}
+
+#list{
+    display: table;
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+#list > li{
+    width:100%;
+    padding: 0;
+    display: inline;
+}
+
+#list > li > dl{
+    display: inline;
+}
+
+.dd-border{
+    border-right: 1px solid #bfbfbf;
+
+}
+
+#list > li > dl > dd{
+    text-align: center;
+    padding:12px 0;
+    width:20%;
+    float: left;
+    border-bottom:1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+}
+
+
+.list-header  dd {
+    font-weight: bold;
+    background-color: #003e7e;
+    color: #fff;
+}
+
+#list  li  .list-header  dd{
+    border: none;
+}
+
+/*列表*/
+
+/*表单*/
+
+#form-content{
+    width: 70%;
+    margin-top: 20px;
+}
+
+#form-content li{
+    list-style: none;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+#form-content label{
+    font-weight: normal;
+    text-align: right;
+}
+
+#form-content input[type="text"], #form-content select{
+    width: 60%;
+    border-radius:3px;
+    background: transparent;
+    border: 1px solid #003e7e;
+    height: 34px;
+    line-height: 34px;
+    padding: 5px;
+    color: #000;
+    opacity:0.7;
+    outline:none;
+}
+
+#form-content input[type="radio"]{
+    width: 2%;
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+#form-content input[type="checkbox"]{
+    vertical-align: middle;
+    margin-top: 0;
+    _margin-top: -3px;
+}
+
+#form-content input.datepicker{
+    display: inline-block;
+    width: 60%;
+    vertical-align: middle;
+    border-radius:3px;
+    border: 1px solid #003e7e;
+    height: 34px;
+    line-height: 34px;
+    padding: 5px;
+    color: #000;
+    opacity:0.7;
+    outline:none;
+    background: url('./icon.png') transparent right no-repeat;
+
+
+}
+
+#form-content input[type="file"]{
+    display: inline-block;
+}
+
+#form-content textarea{
+    width: 60%;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid #003e7e;
+    padding: 5px;
+    color: #000;outline: none;
+    vertical-align: middle;
+}
+
+#form-content .btn-blue{
+    width: 16%;
+}
+/*表单*/
+
+
+@media(min-width:768px){
+    .box_login{
+        width:40%;
+    }
+
+    .login_content{
+        width: 76%;
+    }
+
+    .login_content input.login_vcode{
+        width: 64%;
+    }
+
+    .footer{
+        height: 80px;
+    }
+
+    #form-content label{
+        width:16%;
+    }
+
+    .calendar{
+        left: 17.5%;
+    }
+
+}
+
+@media(min-width:1200px){
+    .box_login{
+        width:34%;
+    }
+
+    .login_content{
+        width: 70%;
+    }
+
+    .footer{
+        height: 60px;
+    }
+
+    #form-content label{
+        width:10%;
+    }
+
+    .calendar{
+        left: 11.5%;
+    }
+
+}
