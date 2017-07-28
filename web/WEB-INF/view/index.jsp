@@ -11,37 +11,18 @@
 
 <html>
   <head>
-      <link href="css/bootstrap.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
+      <link href="../../css/bootstrap.css" rel="stylesheet">
+      <link href="../../css/style.css" rel="stylesheet">
   </head>
   <body>
 
   <div class="container-fluid">
-      <div class="row header">
-          <img src="images/index-logo.png">
-          <div class="header-right">
-              <p>国际部</p>
-              <p>李云娇</p>
-              <a href="login.html">退出</a>
-          </div>
-      </div>
+      <jsp:include page="header.jsp" />
+
       <div class="row">
-          <div class="col-sm-2 col-md-2 col-lg-2 left">
-              <ul class="nav-left">
-                  <li class="active">
-                      <a href="#">等待审核</a>
-                  </li>
-                  <li>
-                      <a href="#">审核未过</a>
-                  </li>
-                  <li>
-                      <a href="form.html">完成上报</a>
-                  </li>
-                  <li>
-                      <a href="#">产品类别</a>
-                  </li>
-              </ul>
-          </div>
+
+          <jsp:include page="menu.jsp" />
+
           <div class="col-sm-10 col-md-10 col-lg-10 right">
               <ul id="list">
                   <li >

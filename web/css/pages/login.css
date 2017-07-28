@@ -1,3 +1,8 @@
 body {
     background-color: #67bedc
 }
+
+.login_content p {
+    margin: 10px 0 0 0;
+    padding: 10px;
+}

@@ -1,6 +1,6 @@
 package com.highjump.epareport.filters;
 
-import com.sun.deploy.util.StringUtils;
+import com.highjump.epareport.utils.CommonUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -27,7 +27,7 @@ public class AuthenticationFilter implements Filter {
 
         // 登录页面除外
         String strUri = request.getRequestURI();
-        if (strUri.startsWith("/login.jsp")) {
+        if (strUri.startsWith("/login")) {
             filterChain.doFilter(request, response);
             return;
         }
@@ -45,10 +45,12 @@ public class AuthenticationFilter implements Filter {
         }
 
         // 找不到用户名
-        String strUsername = (String)session.getAttribute("username");
-        if (strUsername == null || strUsername.equals("")) {
+        if (CommonUtils.getCurrentUser(session) == null) {
             redirectToLogin(response);
+            return;
         }
+
+        filterChain.doFilter(request, response);
     }
 
     /**
@@ -57,7 +59,7 @@ public class AuthenticationFilter implements Filter {
      * @throws IOException
      */
     private void redirectToLogin(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/login.jsp");
+        response.sendRedirect("/login");
     }
 
     @Override
