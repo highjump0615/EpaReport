@@ -2,6 +2,7 @@ package com.highjump.epareport.servlet;
 
 
 import MD5.MD5;
+import com.highjump.epareport.beans.Role;
 import com.highjump.epareport.beans.User;
 import com.highjump.epareport.utils.CommonUtils;
 import com.highjump.epareport.utils.ConnectionUtils;
@@ -20,6 +21,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
+import java.util.function.Function;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
@@ -46,13 +48,35 @@ public class LoginServlet extends HttpServlet {
 
         // 数据库操作
         try {
-            String strSql = "select * from users where username='" + strUsername + "' and password='" + strMd5 + "'";
+            String strSql = "select u.*, r.name as rname from users u ";
+            strSql += "join roles r on u.roleno = r.roleno ";
+            strSql += "where u.username='" + strUsername + "' and u.password='" + strMd5 + "' ";
 
-            Vector rs = DBUtils.getInstance().executeSql(strSql);
+            boolean bResult = DBUtils.getInstance().executeSql(strSql, new Function<ResultSet, Void>() {
+                @Override
+                public Void apply(ResultSet resultSet) {
+
+                    try {
+                        while (resultSet.next()) {
+                            user.setId(resultSet.getInt("userno"));
+                            user.setName(resultSet.getString("name"));
+
+                            Role role = new Role();
+                            role.setId(resultSet.getInt("roleno"));
+                            role.setName(resultSet.getString("rname"));
+
+                            user.setRole(role);
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    return null;
+                }
+            });
+
             // 登录成功
-            if (rs.size() > 0) {
-                Vector vUser = (Vector) rs.get(0);
-                user.setId(Integer.parseInt(vUser.get(0).toString()));
+            if (bResult) {
 
                 // 保存当前用户
                 HttpSession session = req.getSession();

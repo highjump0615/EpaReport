@@ -9,6 +9,8 @@ public class User extends BaseModel {
     private String password;
     private String name;
 
+    private Role role;
+
     // get/set
     public String getName() {
         return name;
@@ -29,5 +31,13 @@ public class User extends BaseModel {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }
