@@ -33,7 +33,7 @@ public class AuthenticationFilter implements Filter {
         }
 
         // css、js等除外
-        if (strUri.startsWith("/css") || strUri.startsWith("/images") || strUri.startsWith("/js")) {
+        if (strUri.startsWith("/css") || strUri.startsWith("/images") || strUri.startsWith("/js") || strUri.startsWith("/lib/")) {
             filterChain.doFilter(request, response);
             return;
         }

@@ -10,8 +10,8 @@
 
 <html>
 <head>
-    <link href="../../css/bootstrap.css" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet">
+    <jsp:include page="style.jsp" />
+
     <link href="../../css/pages/login.css" rel="stylesheet">
 </head>
 <body>
@@ -28,7 +28,7 @@
 
             <c:if test="${not empty errString}">
                 <!-- 错误提示 -->
-                <p class="bg-danger">${errString}</p>
+                <div class="Huialert Huialert-danger"><i class="icon-remove"></i>${errString}</div>
             </c:if>
 
             <div class="first_row clearfix">
@@ -55,7 +55,7 @@
     </div>
     <div class="row footer">
         <div class="container">
-            <div class="col-sm-6 col-md-7 col-lg-8">
+            <div class="col-sm-6 col-md-7 col-lg-8 text-l">
                 <div class="link">
                     <a href="#">网站导航</a>&nbsp;|&nbsp;
                     <a href="#">联系方式</a>&nbsp;|&nbsp;

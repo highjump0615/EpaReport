@@ -11,8 +11,7 @@
 
 <html>
   <head>
-      <link href="../../css/bootstrap.css" rel="stylesheet">
-      <link href="../../css/style.css" rel="stylesheet">
+      <jsp:include page="style.jsp" />
   </head>
   <body>
 

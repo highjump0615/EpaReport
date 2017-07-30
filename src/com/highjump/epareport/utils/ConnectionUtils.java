@@ -3,9 +3,6 @@ package com.highjump.epareport.utils;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-/**
- * Created by high on 2017/7/27.
- */
 public class ConnectionUtils {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {

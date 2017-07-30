@@ -1,8 +1,5 @@
 package com.highjump.epareport.beans;
 
-/**
- * Created by high on 2017/7/29.
- */
 public class Role extends BaseModel {
 
     private String name;

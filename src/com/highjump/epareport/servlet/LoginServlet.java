@@ -26,6 +26,8 @@ import java.util.function.Function;
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
+    private boolean mbResult = false;
+
     public LoginServlet() {
         super();
     }
@@ -52,9 +54,11 @@ public class LoginServlet extends HttpServlet {
             strSql += "join roles r on u.roleno = r.roleno ";
             strSql += "where u.username='" + strUsername + "' and u.password='" + strMd5 + "' ";
 
-            boolean bResult = DBUtils.getInstance().executeSql(strSql, new Function<ResultSet, Void>() {
+            boolean bResult = DBUtils.getInstance().executeSql(strSql, new Function<ResultSet, Boolean>() {
                 @Override
-                public Void apply(ResultSet resultSet) {
+                public Boolean apply(ResultSet resultSet) {
+
+                    boolean bResult = false;
 
                     try {
                         while (resultSet.next()) {
@@ -66,12 +70,15 @@ public class LoginServlet extends HttpServlet {
                             role.setName(resultSet.getString("rname"));
 
                             user.setRole(role);
+
+                            bResult = true;
+                            break;
                         }
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
 
-                    return null;
+                    return bResult;
                 }
             });
 
@@ -83,7 +90,7 @@ public class LoginServlet extends HttpServlet {
                 CommonUtils.storeCurrentUser(session, user);
 
                 // 跳转到主页面
-                resp.sendRedirect(req.getContextPath() + "/home");
+                resp.sendRedirect(req.getContextPath() + "/unit");
             }
             // 失败
             else {

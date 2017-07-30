@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by high on 2017/7/28.
- */
 @WebServlet(urlPatterns = "/home")
 public class HomeServlet extends HttpServlet {
 

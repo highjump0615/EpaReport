@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Created by high on 2017/7/27.
- */
 public class OracleConnUtils {
 
     public static Connection getOracleConnection() throws ClassNotFoundException, SQLException {

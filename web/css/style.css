@@ -1,8 +1,8 @@
 body{
     overflow: auto;
-    font-size: 12px;
     height: 100%;
     background: no-repeat;
+    font-size: 14px;
 }
 
 
@@ -19,12 +19,12 @@ dl{
 }
 
 .jb_color{
-    /* IEä¯ÀÀÆ÷ */
+    /* IEï¿½ï¿½ï¿½ï¿½ï¿½ */
     filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e4f5eb,endcolorstr=#67bedc,gradientType=1);
-    /* IEä¯ÀÀÆ÷ */
-    /* IE10ÒÔÉÏ */
+    /* IEï¿½ï¿½ï¿½ï¿½ï¿½ */
+    /* IE10ï¿½ï¿½ï¿½ï¿½ */
     background: -ms-linear-gradient(top, #e4f5eb, rgba(103, 190, 220,1));
-    /* IE10ÒÔÉÏ */
+    /* IE10ï¿½ï¿½ï¿½ï¿½ */
     /* firefox */
     background:-moz-linear-gradient(top, #e4f5eb, rgba(103, 190, 220,1));
     /* firefox */
@@ -34,7 +34,7 @@ dl{
 }
 
 
-/*°´Å¥*/
+/*ï¿½ï¿½Å¥*/
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -89,9 +89,9 @@ fieldset[disabled] .btn-grey.active {
     background-color: #fff;
     border-color: #ccc;
 }
-/*°´Å¥*/
+/*ï¿½ï¿½Å¥*/
 
-/*µÇÂ¼*/
+/*ï¿½ï¿½Â¼*/
 .header_login{
     background-color: #003e7e;
     height: 60px;
@@ -114,6 +114,7 @@ fieldset[disabled] .btn-grey.active {
 .login_content{
     margin: 5% auto;
     position: relative;
+    padding: 40px;
 }
 
 .login_content .tab{
@@ -208,6 +209,7 @@ fieldset[disabled] .btn-blue.active {
     bottom: 0;
     color: #fff;
     padding-top: 10px;
+    padding-bottom: 0px;
 }
 
 .footer .link{
@@ -226,7 +228,7 @@ fieldset[disabled] .btn-blue.active {
     float: right;
 }
 
-/*µÇÂ¼*/
+/*ï¿½ï¿½Â¼*/
 
 .header{
     height: 60px;
@@ -299,7 +301,7 @@ fieldset[disabled] .btn-blue.active {
     text-decoration: none;
 }
 
-/*ÁÐ±í*/
+/*ï¿½Ð±ï¿½*/
 
 .right{
     width: 86%;
@@ -347,9 +349,9 @@ fieldset[disabled] .btn-blue.active {
     border: none;
 }
 
-/*ÁÐ±í*/
+/*ï¿½Ð±ï¿½*/
 
-/*±íµ¥*/
+/*ï¿½ï¿½*/
 
 #form-content{
     width: 70%;
@@ -426,7 +428,7 @@ fieldset[disabled] .btn-blue.active {
 #form-content .btn-blue{
     width: 16%;
 }
-/*±íµ¥*/
+/*ï¿½ï¿½*/
 
 
 @media(min-width:768px){
@@ -440,10 +442,6 @@ fieldset[disabled] .btn-blue.active {
 
     .login_content input.login_vcode{
         width: 64%;
-    }
-
-    .footer{
-        height: 80px;
     }
 
     #form-content label{
@@ -463,10 +461,6 @@ fieldset[disabled] .btn-blue.active {
 
     .login_content{
         width: 70%;
-    }
-
-    .footer{
-        height: 60px;
     }
 
     #form-content label{

@@ -1,12 +1,8 @@
 package com.highjump.epareport.utils;
 
 import java.sql.*;
-import java.util.Vector;
 import java.util.function.Function;
 
-/**
- * Created by high on 2017/7/27.
- */
 public class DBUtils {
 
     private static DBUtils mInstance = null;
@@ -33,48 +29,23 @@ public class DBUtils {
         }
     }
 
-    public boolean executeSql(String strSql, Function<ResultSet, Void> setResult) throws SQLException {
+    public boolean executeSql(String strSql, Function<ResultSet, Boolean> setResult) throws SQLException {
 
         Statement stmt = null;
         ResultSet rset = null;
 
-//        Vector vctReturn = new Vector();
-//        Vector vctRow = null;
-//
-//        String strContent = null;
         stmt = mConnection.createStatement();
 
         rset = stmt.executeQuery(strSql);
-        ResultSetMetaData rsmd = rset.getMetaData();
-        int nColumnCount = rsmd.getColumnCount();
 
-
-        setResult.apply(rset);
-
-//
-//        while(rset.next()) {
-//            vctRow = new Vector();
-//
-//            for(int i = 1; i <= nColumnCount; ++i) {
-//                String strtemp = rset.getString(i);
-//                if(strtemp == null) {
-//                    strContent = null;
-//                } else {
-//                    strContent = strtemp;
-//                }
-//
-//                vctRow.add(strContent);
-//            }
-//
-//            vctReturn.add(vctRow);
-//        }
+        boolean bResult = setResult.apply(rset);
 
         rset.close();
         rset = null;
         stmt.close();
         stmt = null;
 
-        return nColumnCount > 0;
+        return bResult;
     }
 
 }
