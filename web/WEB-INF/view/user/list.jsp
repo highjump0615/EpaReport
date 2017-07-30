@@ -14,7 +14,7 @@
     <!-- 面包屑 -->
     <nav class="breadcrumb">
         <i class="Hui-iconfont">&#xe67f;</i> 首页
-        <span class="c-gray en">&gt;</span> 单位部门
+        <span class="c-gray en">&gt;</span> 用户管理
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新">
             <i class="Hui-iconfont">&#xe68f;</i>
         </a>
@@ -26,8 +26,8 @@
         <article class="cl pd-20">
             <div class="cl pd-5 bg-1 bk-gray">
 				<span class="l">
-					<a href="javascript:;" onclick="open_edit('添加单位', '${pageContext.request.contextPath}/unit/add','800','400')" class="btn btn-primary radius">
-                        <i class="Hui-iconfont">&#xe600;</i> 添加单位
+					<a href="javascript:;" onclick="open_edit('添加用户', '${pageContext.request.contextPath}/user/add','800','400')" class="btn btn-primary radius">
+                        <i class="Hui-iconfont">&#xe600;</i> 添加用户
                     </a>
 				</span>
                 <span class="r">共有数据：<strong>0</strong> 条</span>
@@ -38,9 +38,10 @@
                     <thead>
                     <tr class="text-c">
                         <th width="40">序号</th>
-                        <th>单位名称</th>
-                        <th>EPA组织编码</th>
-                        <th>责任人</th>
+                        <th>用户名</th>
+                        <th>角色</th>
+                        <th>姓名</th>
+                        <th>单位部门</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -67,6 +68,7 @@
             'ordering': false
         });
     });
+
 
 </script>
 

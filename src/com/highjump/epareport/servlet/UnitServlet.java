@@ -9,18 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/unit/*")
-public class UnitServlet extends HttpServlet {
-
-    private static String MENU = "unit";
+public class UnitServlet extends BaseServlet {
 
     public UnitServlet() {
-        super();
+        super("unit");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 设置当前菜单
-        req.setAttribute("menu", MENU);
+        super.doGet(req, resp);
 
         RequestDispatcher dispatcher;
 

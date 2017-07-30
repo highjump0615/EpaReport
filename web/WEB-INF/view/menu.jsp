@@ -20,8 +20,8 @@
             </a>
         </dl>
         <dl>
-            <a href="/">
-            <dt>
+            <a href="${pageContext.request.contextPath}/user">
+                <dt <c:if test="${menu eq 'user'}">class="current"</c:if>>
                 <i class="Hui-iconfont">&#xe62d;</i> 用户管理
             </dt>
             </a>
