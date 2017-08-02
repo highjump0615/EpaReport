@@ -13,7 +13,7 @@
         <div class="tabBar cl">
             <span class="current">添加大类</span>
             <a href="${pageContext.request.contextPath}/category/add?level=2"><span>添加子类</span></a>
-            <a href="${pageContext.request.contextPath}/category/add?level=3"><span>添加细类</span></a>
+            <a href="${pageContext.request.contextPath}/category/add?level=3&parent=1"><span>添加细类</span></a>
         </div>
 
         <!-- 添加大类 -->
@@ -40,6 +40,7 @@
 
     </div>
 
+</article>
 </article>
 
 <!-- script -->

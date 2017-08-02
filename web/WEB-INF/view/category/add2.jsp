@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -13,7 +14,7 @@
         <div class="tabBar cl">
             <a href="${pageContext.request.contextPath}/category/add?level=1"><span>添加大类</span></a>
             <span class="current">添加子类</span>
-            <a href="${pageContext.request.contextPath}/category/add?level=3"><span>添加细类</span></a>
+            <a href="${pageContext.request.contextPath}/category/add?level=3&parent=1"><span>添加细类</span></a>
         </div>
 
         <!-- 添加子类 -->
@@ -22,14 +23,13 @@
                 <%-- 大类 --%>
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-3">产品大类：</label>
-                    <div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+                    <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
                         <select class="select" name="parent" size="1">
-                            <option value="1">
-                                系统管理员
+                            <c:forEach items="${categories}" var="category">
+                            <option value="${category.id}">
+                                ${category.name}
                             </option>
-                            <option value="2">
-                                系统管理员
-                            </option>
+                            </c:forEach>
                         </select>
                         </span>
                     </div>

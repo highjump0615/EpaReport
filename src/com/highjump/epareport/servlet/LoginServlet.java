@@ -26,8 +26,6 @@ import java.util.function.Function;
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
-    private boolean mbResult = false;
-
     public LoginServlet() {
         super();
     }

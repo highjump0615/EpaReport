@@ -34,6 +34,9 @@ public class DBUtils {
         Statement stmt = null;
         ResultSet rset = null;
 
+        if (mConnection == null) {
+            setConnection();
+        }
         stmt = mConnection.createStatement();
 
         rset = stmt.executeQuery(strSql);
