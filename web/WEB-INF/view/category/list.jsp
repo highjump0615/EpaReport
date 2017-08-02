@@ -88,9 +88,17 @@
 
 <script type="text/javascript">
 
+    var gTable;
+
     $(document).ready(function() {
+        gTable = initTable('table');
     });
 
+    /**
+     * 删除
+     * @param obj
+     * @param id
+     */
     function deleteCategory(obj,id){
         layer.msg('暂时不支持删除分类', {icon:7, time:1000});
     }

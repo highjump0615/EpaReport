@@ -29,6 +29,13 @@ public class DBUtils {
         }
     }
 
+    /**
+     * 查询
+     * @param strSql
+     * @param setResult
+     * @return
+     * @throws SQLException
+     */
     public boolean executeSql(String strSql, Function<ResultSet, Boolean> setResult) throws SQLException {
 
         Statement stmt = null;
@@ -49,6 +56,22 @@ public class DBUtils {
         stmt = null;
 
         return bResult;
+    }
+
+    /**
+     * 添加、更新、删除
+     * @param strSql
+     * @throws SQLException
+     */
+    public boolean executeUpdateSql(String strSql) throws SQLException {
+        if (mConnection == null) {
+            setConnection();
+        }
+        Statement stmt = mConnection.createStatement();
+        int nRow = stmt.executeUpdate(strSql);
+        mConnection.commit();
+
+        return nRow > 0;
     }
 
 }

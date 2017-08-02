@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -45,6 +46,23 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="${units}" var="unit">
+                        <tr class="text-c">
+                            <td></td>
+                            <td>${unit.name}</td>
+                            <td>${unit.number}</td>
+                            <td>${unit.name}</td>
+                            <!-- 操作 -->
+                            <td>
+                                <a style="text-decoration:none" class="ml-5" onclick="open_edit('编辑', '${pageContext.request.contextPath}/unit/detail?id=' + ${unit.id},'800','400')" title="编辑">
+                                    <i class="Hui-iconfont">&#xe6df;</i>
+                                </a>
+                                <a style="text-decoration:none" class="ml-5" onClick="deleteUnit(this, ${unit.id})" href="javascript:;" title="删除">
+                                    <i class="Hui-iconfont">&#xe6e2;</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -59,14 +77,40 @@
 
 <script type="text/javascript" src="../../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/tablecommon.js"></script>
 
 <script type="text/javascript">
 
+    var gTable;
+
     $(document).ready(function() {
-        $('table').dataTable({
-            'ordering': false
-        });
+        gTable = initTable('table');
     });
+
+    /**
+     * 删除
+     * @param obj
+     * @param id
+     */
+    function deleteUnit(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type: 'DELETE',
+                url: '${pageContext.request.contextPath}/unit/' + id,
+                data: {},
+                success: function (data) {
+                    // 删除行
+                    gTable.row($(obj).parents('tr')).remove().draw();
+
+                    // 提示
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+    }
 
 </script>
 

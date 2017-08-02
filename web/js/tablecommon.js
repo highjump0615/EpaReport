@@ -2,8 +2,8 @@
  * Created by high on 2017/8/2.
  */
 
-$(document).ready(function() {
-    $('table').dataTable({
+function initTable(identifier) {
+    var t = $(identifier).DataTable({
         'ordering': false,
         'fnDrawCallback': function() {
             var api = this.api();
@@ -13,4 +13,6 @@ $(document).ready(function() {
             });
         }
     });
-});
+
+    return t;
+}
