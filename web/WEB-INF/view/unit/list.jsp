@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
 <head>
@@ -31,7 +32,7 @@
                         <i class="Hui-iconfont">&#xe600;</i> 添加单位
                     </a>
 				</span>
-                <span class="r">共有数据：<strong>0</strong> 条</span>
+                <span class="r">共有数据：<strong>${fn:length(units)}</strong> 条</span>
             </div>
 
             <div class="mt-10">

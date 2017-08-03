@@ -87,31 +87,25 @@
             },
             onkeyup: false,
             focusCleanup: true,
-            success: "valid"
+            success: "valid",
+            submitHandler: function(form) {
+                // 提交
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/unit/save',
+                    data: $(form).serializeArray(),
+                    success: function (data) {
+                        parent.location.reload();
+                    },
+                    error: function (data) {
+                        enableSubmit(true);
+                        console.log(data);
+                    }
+                });
+
+                enableSubmit(false);
+            }
         });
-
-        objForm.submit(function (e) {
-            e.preventDefault();
-
-            // 提交
-            $.ajax({
-                type: 'POST',
-                url: '${pageContext.request.contextPath}/unit/save',
-                data: $(this).serializeArray(),
-                success: function (data) {
-                    parent.location.reload();
-                },
-                error: function (data) {
-                    enableSubmit(true);
-                    console.log(data);
-                }
-            });
-
-            enableSubmit(false);
-
-            return false;
-        });
-
     });
 
 </script>

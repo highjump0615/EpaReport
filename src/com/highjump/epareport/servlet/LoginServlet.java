@@ -87,8 +87,22 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 CommonUtils.storeCurrentUser(session, user);
 
+                // 添加log
+                strSql = "insert into loginlog(userno, loginip) values (";
+                strSql += String.format("%d, ", user.getId());
+                strSql += String.format("'%s') ", req.getRemoteAddr());
+                DBUtils.getInstance().executeUpdateSql(strSql);
+
                 // 跳转到主页面
-                resp.sendRedirect(req.getContextPath() + "/unit");
+                if (user.getRole().getName().equals("系统管理员")) {
+                    resp.sendRedirect(req.getContextPath() + "/category");
+                }
+                else if (user.getRole().getName().equals("国际部用户")) {
+                    resp.sendRedirect(req.getContextPath() + "/pending");
+                }
+                else {
+                    resp.sendRedirect(req.getContextPath() + "/form");
+                }
             }
             // 失败
             else {

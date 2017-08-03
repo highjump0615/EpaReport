@@ -1,4 +1,11 @@
+<%@ page import="com.highjump.epareport.beans.Category" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    ArrayList<Category> listCategory = (ArrayList<Category>) request.getAttribute("categories");
+%>
+
 
 <html>
 <head>
@@ -25,7 +32,7 @@
 
         <article class="cl pd-20">
             <div class="cl pd-5 bg-1 bk-gray">
-                <span class="r">共有数据：<strong>0</strong> 条</span>
+                <span class="r">共有数据：<strong><%= listCategory.size()%></strong> 条</span>
             </div>
 
             <div class="mt-10">
@@ -35,11 +42,30 @@
                         <th width="40">序号</th>
                         <th>产品大类</th>
                         <th>产品子类</th>
+                        <th>产品细类</th>
                         <th>当前版本</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
+
+                    <% for (Category category : listCategory) { %>
+                    <tr class="text-c">
+                        <td></td>
+                        <td><%= category.getParentCategory(Category.LEVEL_CATEGORY).getName() %></td>
+                        <td><%= category.getParentCategory(Category.LEVEL_SUBCATEGORY).getName() %></td>
+                        <td><%= (category.getParentCategory(Category.LEVEL_PRODUCT) != null) ? category.getParentCategory(Category.LEVEL_PRODUCT).getName() : "" %></td>
+                        <td><%= category.getVersion() %></td>
+                        <td>
+                            <a style="text-decoration:none" class="ml-5" href="javascript:;" title="填报数据">
+                                <i class="Hui-iconfont">&#xe692;</i>
+                            </a>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                    %>
+
                     </tbody>
                 </table>
             </div>
@@ -53,14 +79,14 @@
 <jsp:include page="../script.jsp" />
 
 <script type="text/javascript" src="../../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/tablecommon.js"></script>
 
 <script type="text/javascript">
 
+    var gTable;
+
     $(document).ready(function() {
-        $('table').dataTable({
-            'ordering': false
-        });
+        gTable = initTable('table');
     });
 
 </script>

@@ -37,7 +37,7 @@
                         <i class="Hui-iconfont">&#xe600;</i> 添加分类
                     </a>
 				</span>
-                <span class="r">共有数据：<strong>0</strong> 条</span>
+                <span class="r">共有数据：<strong><%= listCategory.size()%></strong> 条</span>
             </div>
 
             <div class="mt-10">

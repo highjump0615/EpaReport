@@ -3,6 +3,13 @@
 <html>
 <head>
     <jsp:include page="style.jsp" />
+
+    <style type="text/css">
+        .table td {
+            text-align: center;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -57,7 +64,22 @@
 
     $(document).ready(function() {
         $('table').dataTable({
-            'ordering': false
+            'ordering': false,
+            'searching': false,
+            'processing': true,
+            'serverSide': true,
+            'ajax': {
+                'url': '${pageContext.request.contextPath}/log/login/list',
+                'dataType': 'json',
+                'type': 'GET'
+            },
+            'fnDrawCallback': function() {
+                var api = this.api();
+                var startIndex = api.context[0]._iDisplayStart;
+                api.column(0).nodes().each(function(cell, i) {
+                    cell.innerHTML = startIndex + i + 1;
+                });
+            }
         });
     });
 

@@ -1,5 +1,7 @@
 package com.highjump.epareport.servlet;
 
+import com.highjump.epareport.controller.CategoryCtrl;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +28,9 @@ public class FormServlet extends BaseServlet {
             dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/view/form/category.jsp");
         }
         else {
-            // 详情页面
+            req.setAttribute("categories", CategoryCtrl.getInstance().getCategories(0, 0));
+
+            // 列表页面
             dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/view/form/category.jsp");
         }
         dispatcher.forward(req, resp);
