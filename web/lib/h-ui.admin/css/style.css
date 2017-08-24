@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* 你自己的样式 */
+
+/* header */
+.navbar-wrapper {
+    height: 52px;
+}
+.navbar-nav>ul>li, .navbar-nav>ul>li>a {
+    line-height: 52px;
+}
+
+/* 菜单 */
+.Hui-aside {
+    top: 52px;
+}
+.Hui-aside .menu_dropdown dl > a:hover {
+    text-decoration: none;
+}
+.Hui-aside .menu_dropdown dt.current {
+    color: #148cf1;
+    background-color: rgba(255,255,255,.2);
+}
+
+/* 主页面 */
+.Hui-article-box {
+    top: 52px;
+}
